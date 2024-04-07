@@ -2,8 +2,19 @@ package backend.project4.moonlight_confession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.util.List;
+import java.util.Arrays;
+
+import backend.project4.moonlight_confession.domain.AppUserRepository;
+import backend.project4.moonlight_confession.domain.Relationship;
+import backend.project4.moonlight_confession.domain.Recipient;
+import backend.project4.moonlight_confession.domain.RecipientRepository;
+import backend.project4.moonlight_confession.domain.RelationshipRepository;
 
 @SpringBootApplication
 public class MoonlightConfessionApplication {
@@ -13,6 +24,44 @@ public class MoonlightConfessionApplication {
 		SpringApplication.run(MoonlightConfessionApplication.class, args);
 	}
 
+	@Bean
+	public CommandLineRunner recipientDemo(RecipientRepository recirepository, RelationshipRepository relarepository, AppUserRepository urepository) {
+		return (args) -> {
+			log.info("save a couple of recipient");
 
+			// List<String> relationshipTypes = Arrays.asList
+			// (
+   			//  "Friendship", "Family", "Lover", "Colleagues", "Strangers", "Anonymous", "Self"
+			//  );
 
-}
+			// for (String type : relationshipTypes) {
+   			// 	Relationship relationship = new Relationship(type);
+    		// 	relarepository.save(relationship);
+			// }
+
+			Relationship relationship1 = new Relationship("Friendship");
+			Relationship relationship2 = new Relationship("Family");
+			Relationship relationship3 = new Relationship("Lover");
+			Relationship relationship4 = new Relationship("Colleagues");
+			Relationship relationship5 = new Relationship("Strangers");
+			Relationship relationship6 = new Relationship("Anonymous");
+			Relationship relationship7 = new Relationship("Self");
+
+			relarepository.save(relationship1);
+			relarepository.save(relationship2);
+			relarepository.save(relationship3);
+			relarepository.save(relationship4);
+			relarepository.save(relationship5);
+			relarepository.save(relationship6);
+			relarepository.save(relationship7);
+			
+			recirepository.save(new Recipient("Alex", "Johnson", "+1-555-0123", "alex.johnson@example.com", relationship4));
+			recirepository.save(new Recipient("Emily", "Turner", "+1-555-9876", "em.turner@mailservice.com", relationship2));
+			recirepository.save(new Recipient("David", "Kim", "+1-555-7643", "d.kim@webmail.com", relationship6));
+
+			log.info("fetch all recipients");
+			for (Recipient recipient : recirepository.findAll()) {
+				log.info(recipient.toString());
+			}
+	};
+}}

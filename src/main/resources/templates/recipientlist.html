@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="css/bootstrap.min.css"
+    th:href="@{css/bootstrap.min.css}"
+  />
+  <head>
+    <title>Recipient</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>  
+    <div class="container">
+      <div class="col-md-4">
+        <h1>Recipient List</h1>
+      </div>
+
+      <div class="col-md-4">
+        <h3 th:inline="text">Welcome to Moonlight Confession<span  sec:authentication="name"></span>!</h3></div>
+
+
+      <div class="col-md-4" style="float: right; padding: 20px 0; margin-top: -5%; margin-right: -15%">
+        <form th:action="@{/logout}" method="post">
+          <input type="submit" value="Sign Out" class="btn btn-xs btn-danger"/>
+        </form>
+      </div>
+
+    <table class="table table-striped">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Relationship</th>
+          <th sec:authorize="hasRole('ADMIN')"></th>
+        </tr>
+
+        <tr th:each="recipient : ${recipientlist}">
+          <td th:text="${recipient.firstName}"></td>
+          <td th:text="${recipient.lastName}"></td>
+          <td th:text="${recipient.phoneNumber}"></td>
+          <td th:text="${recipient.email}"></td>
+          <td th:text="${recipient.relationship.name}"></td>
+          <td
+            td sec:authorize="hasRole('ADMIN')"><a
+              th:href="@{/delete/{id}(id=${recipient.id})}"
+              class="btn btn-xs btn-danger"
+              >Delete</a>
+          </td>
+          <td>
+            <a th:href="@{/edit/{id}(id=${recipient.id})}" class="btn btn-warning"
+              >Edit</a
+            >
+          </td>
+        </tr>
+    </table>
+    <a href="/addrecipient" class="btn btn-success">Add Book</a>
+  </body>
+</html>

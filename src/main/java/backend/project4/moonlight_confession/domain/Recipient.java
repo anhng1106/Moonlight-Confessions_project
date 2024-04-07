@@ -14,7 +14,7 @@ public class Recipient {
     private Long recipientId;
     private String firstName;
     private String lastName;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
     @ManyToOne
@@ -23,12 +23,13 @@ public class Recipient {
 
     public Recipient() {}
 
-    public Recipient(String firstName, String lastName, int phoneNumber, String email) {
+    public Recipient(String firstName, String lastName, String phoneNumber, String email, Relationship relationship) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.relationship = relationship;   
     }
 
     public Long getRecipientId() {
@@ -49,10 +50,10 @@ public class Recipient {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
     public String getEmail() {
@@ -60,6 +61,14 @@ public class Recipient {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Relationship getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(Relationship relationship) {
+        this.relationship = relationship;
     }
 
     
