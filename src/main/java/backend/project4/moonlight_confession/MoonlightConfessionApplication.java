@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.List;
 import java.util.Arrays;
 
+import backend.project4.moonlight_confession.domain.AppUser;
 import backend.project4.moonlight_confession.domain.AppUserRepository;
 import backend.project4.moonlight_confession.domain.Relationship;
 import backend.project4.moonlight_confession.domain.Recipient;
@@ -55,13 +56,18 @@ public class MoonlightConfessionApplication {
 			relarepository.save(relationship6);
 			relarepository.save(relationship7);
 			
-			recirepository.save(new Recipient("Alex", "Johnson", "+1-555-0123", "alex.johnson@example.com", relationship4));
-			recirepository.save(new Recipient("Emily", "Turner", "+1-555-9876", "em.turner@mailservice.com", relationship2));
-			recirepository.save(new Recipient("David", "Kim", "+1-555-7643", "d.kim@webmail.com", relationship6));
+			recirepository.save(new Recipient("Alex", "Johnson", "+1-555-0123", "alex.johnson@example.com", "Hi, I'm so glad to work with you", relationship4));
+			recirepository.save(new Recipient("Emily", "Turner", "+1-555-9876", "em.turner@mailservice.com", "I love you sis!", relationship2));
+			recirepository.save(new Recipient("David", "Kim", "+1-555-7643", "d.kim@webmail.com", "Sorry for everything I've done!", relationship6));
 
 			log.info("fetch all recipients");
 			for (Recipient recipient : recirepository.findAll()) {
 				log.info(recipient.toString());
 			}
+
+			// Create users with BCrypt encoded password (user/user, admin/admin)
+			AppUser user1 = new AppUser("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+			AppUser user2 = new AppUser("admin", "$2a$08$bCCcGjB03eulCWt3CY0AZew2rVzXFyouUolL5dkL/pBgFkUH9O4J2", "ADMIN");
+			urepository.saveAll(Arrays.asList(user1, user2));
 	};
 }}

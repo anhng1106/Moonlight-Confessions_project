@@ -16,6 +16,7 @@ public class Recipient {
     private String lastName;
     private String phoneNumber;
     private String email;
+    private String message;
 
     @ManyToOne
 	@JoinColumn(name = "relationshipId")
@@ -23,12 +24,13 @@ public class Recipient {
 
     public Recipient() {}
 
-    public Recipient(String firstName, String lastName, String phoneNumber, String email, Relationship relationship) {
+    public Recipient(String firstName, String lastName, String phoneNumber, String email, String message, Relationship relationship) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.message = message;
         this.relationship = relationship;   
     }
 
@@ -69,6 +71,14 @@ public class Recipient {
 
     public void setRelationship(Relationship relationship) {
         this.relationship = relationship;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     

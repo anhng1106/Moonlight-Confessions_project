@@ -33,6 +33,7 @@
           <th>Phone Number</th>
           <th>Email</th>
           <th>Relationship</th>
+          <th>Message</th>
           <th sec:authorize="hasRole('ADMIN')"></th>
         </tr>
 
@@ -42,6 +43,7 @@
           <td th:text="${recipient.phoneNumber}"></td>
           <td th:text="${recipient.email}"></td>
           <td th:text="${recipient.relationship.name}"></td>
+          <td th:text="${recipient.message}"></td>
           <td
             td sec:authorize="hasRole('ADMIN')"><a
               th:href="@{/delete/{id}(id=${recipient.id})}"
@@ -55,6 +57,6 @@
           </td>
         </tr>
     </table>
-    <a href="/addrecipient" class="btn btn-success">Add Book</a>
+    <a href="/addrecipient" class="btn btn-success">Add recipient</a>
   </body>
 </html>
