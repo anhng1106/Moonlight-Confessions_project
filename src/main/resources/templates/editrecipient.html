@@ -8,11 +8,14 @@
   />
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>New Recipient & Message</title>
+    <title>Edit Recipient & Message</title>
   </head>
   <body>
-    <h2>Add New Recipient & Message</h2>
-    <form th:object="${recipient}" th:action="@{/save}" action="#" method="post">
+    <h2>Edit Recipient & Message</h2>
+    <form th:object="${recipient}" th:action="@{../save}" action="#" method="post">
+
+      <input type="hidden" id="id" th:field="*{id}" />
+
       <label for="firstName">First Name:</label>
       <input type="text" id="firstName" th:field="*{firstName}" required /><br /><br />
       <label for="lastName">Last Name:</label>
@@ -23,15 +26,14 @@
       <input type="text" id="email" th:field="*{email}" required /><br /><br />
       <label for="message">Message:</label>
       <input type="text" id="message" th:field="*{message}" required /><br /><br />
-      
-      <label for="relalist">Relationship</label>
-      <select id="relalist" th:field="*{relationship}" class="form-control">
+
+       <label for="relalist">Relationship</label>
+        <select id="relalist" th:field="*{relationship}" class="form-control">
         <option th:each="relationship: ${relationship}" th:value="${relationship.id}"
             th:text="${relationship.name}"></option>
       </select><br></br>
 
-      <input type="submit" class="btn btn-success" value="Save"></input>
-
+        <input type="submit" class="btn btn-success" value="Save"></input>
     </form>
   </body>
 </html>

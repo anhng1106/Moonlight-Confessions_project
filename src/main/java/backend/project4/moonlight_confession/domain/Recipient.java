@@ -34,6 +34,11 @@ public class Recipient {
         this.relationship = relationship;   
     }
 
+    public Recipient(Long recipientId)
+    {
+        this.recipientId = recipientId;
+    }
+
     public Long getRecipientId() {
         return recipientId;
     }
