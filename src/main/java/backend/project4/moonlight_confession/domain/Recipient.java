@@ -39,10 +39,10 @@ public class Recipient {
         this.recipientId = recipientId;
     }
 
-    public Long getRecipientId() {
-        return recipientId;
+    public Long getId() {
+        return this.recipientId;
     }
-    public void setRecipientId(Long recipientId) {
+    public void setId(Long recipientId) {
         this.recipientId = recipientId;
     }
     public String getFirstName() {

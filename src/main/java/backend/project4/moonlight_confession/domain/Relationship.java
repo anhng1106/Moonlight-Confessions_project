@@ -32,16 +32,16 @@ public class Relationship {
         this.relationshipId = relationshipId;
     }
 
-    public Long getRelationshipId() {
-        return relationshipId;
+    public Long getId() {
+        return this.relationshipId;
     }
 
-    public void setRelationshipId(Long relationshipId) {
+    public void setId(Long relationshipId) {
         this.relationshipId = relationshipId;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -49,7 +49,7 @@ public class Relationship {
     }
 
     public List<Recipient> getRecipients() {
-        return recipients;
+        return this.recipients;
     }
 
     public void setRecipients(List<Recipient> recipients) {

@@ -17,7 +17,9 @@
       </div>
 
       <div class="col-md-4">
-        <h3 th:inline="text">Welcome to Moonlight Confession<span  sec:authentication="name"></span>!</h3></div>
+        <h3 th:inline="text">Welcome to Moonlight Confession</h3>
+        <h5 th:inline="text">You are <span  sec:authentication="name"></span>!</h5>
+        </div>
 
 
       <div class="col-md-4" style="float: right; padding: 20px 0; margin-top: -5%; margin-right: -15%">
