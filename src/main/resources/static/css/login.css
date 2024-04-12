@@ -1,14 +1,10 @@
 body {
-  background-image: url("moonlight.jpg");
+  background-image: url("./moonlight.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
-.col-md-4 {
-  /* Assuming this class is not defined since you've commented out the Bootstrap link */
-  width: 300px; /* Adjust width as needed */
-  padding: 20px; /* Adjust padding as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow around the login box */
 }

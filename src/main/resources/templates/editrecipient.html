@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <link
-    type="text/css"
-    rel="stylesheet"
-    href="css/bootstrap.min.css"
-    th:href="@{css/bootstrap.min.css}"
-  />
+  type="text/css"
+  rel="stylesheet"
+  href="css/bootstrap.min.css"
+  th:href="@{css/bootstrap.min.css}"
+/>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Edit Recipient & Message</title>
@@ -21,7 +21,7 @@
       <label for="lastName">Last Name:</label>
       <input type="text" id="lastName" th:field="*{lastName}" required /><br /><br />
       <label for="phoneNumber">Phone number:</label>
-      <input type="number" id="phoneNumber" th:field="*{phoneNumber}" required /><br /><br />
+      <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required /><br /><br />
       <label for="email">Email:</label>
       <input type="text" id="email" th:field="*{email}" required /><br /><br />
       <label for="message">Message:</label>
