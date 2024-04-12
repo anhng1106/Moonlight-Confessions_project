@@ -5,6 +5,13 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.col-md-4 {
+  justify-content: left;
+  align-items: left;
+  margin-top: 10%;
+  margin-left: 10%;
+  color: #f8e1e0;
+  text-align: center;
 }

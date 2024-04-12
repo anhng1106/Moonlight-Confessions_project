@@ -4,6 +4,7 @@
     <title>Sign Up</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="/css/signup.css" />
 </head>
 <body>
 <div class="container">
@@ -23,7 +24,8 @@
 				<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
 			</div>
 			
-			<input type="submit" class="btn btn-primary" value="Signup"></input>		
+			<br>
+			<input type="submit" class="btn btn-primary" value="Signup"></input>
 		</form>
 	</div>
 </div>

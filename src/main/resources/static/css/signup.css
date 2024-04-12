@@ -1,0 +1,17 @@
+body {
+  background-image: url("./moonlight1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  margin-left: 35%;
+  color: #f8e1e0;
+}
