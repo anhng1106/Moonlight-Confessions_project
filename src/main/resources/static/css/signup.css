@@ -5,19 +5,11 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
-  color: white;
 }
-.container {
-  color: #f8e1e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+.container,
 .col-md-4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f8e1e0;
   text-align: center;
 }

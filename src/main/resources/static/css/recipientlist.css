@@ -5,10 +5,4 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
-  color: #f8e1e0;
-}
-
-.container {
-  color: #f8e1e0;
-  margin-top: 13%;
 }
