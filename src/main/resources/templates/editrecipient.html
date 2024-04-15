@@ -12,28 +12,41 @@
   </head>
   <body>
     <h2>Edit Recipient & Message</h2>
+    <div>
     <form th:object="${recipient}" th:action="@{../save}" action="#" method="post">
 
-      <input type="hidden" id="id" th:field="*{id}" />
+      <input type="hidden" id="id" th:field="*{id}" class="form-control"/>
 
       <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" th:field="*{firstName}" required /><br /><br />
+      <input type="text" id="firstName" th:field="*{firstName}" required />
+      <div style="clear: both; display: block; height: 10px;"></div>
+
       <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" th:field="*{lastName}" required /><br /><br />
+      <input type="text" id="lastName" th:field="*{lastName}" required />
+      <div style="clear: both; display: block; height: 10px;"></div>
+
       <label for="phoneNumber">Phone number:</label>
-      <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required /><br /><br />
+      <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required />
+      <div style="clear: both; display: block; height: 10px;"></div>
+
       <label for="email">Email:</label>
-      <input type="text" id="email" th:field="*{email}" required /><br /><br />
+      <input type="text" id="email" th:field="*{email}" required />
+      <div style="clear: both; display: block; height: 10px;"></div>
+
       <label for="message">Message:</label>
-      <input type="text" id="message" th:field="*{message}" required /><br /><br />
+      <input type="text" id="message" th:field="*{message}" required />
+      <div style="clear: both; display: block; height: 10px;"></div>
 
        <label for="relalist">Relationship</label>
         <select id="relalist" th:field="*{relationship}" class="form-control">
         <option th:each="relationship: ${relationship}" th:value="${relationship.id}"
             th:text="${relationship.name}"></option>
-      </select><br></br>
+      </select>
+      <div style="clear: both; display: block; height: 10px;"></div>
 
         <input type="submit" class="btn btn-success" value="Save"></input>
     </form>
+    <a th:href="@{/recipientlist}" class="btn btn-success">Home</a>
+	</div>
   </body>
 </html>
