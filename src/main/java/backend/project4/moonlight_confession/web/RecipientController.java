@@ -70,7 +70,7 @@ public class RecipientController {
         return "redirect:../recipientlist"; 
     }
 
-    // Edit book
+    // Edit recipient
 @SuppressWarnings("null")
 @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 public String editRecipient(@PathVariable("id") Long recipientId, Model model) {

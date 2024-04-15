@@ -8,5 +8,7 @@ body {
   color: #f8e1e0;
 }
 
-.col-md-4 {
+.container {
+  color: #f8e1e0;
+  margin-top: 5%;
 }

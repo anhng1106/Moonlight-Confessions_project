@@ -13,6 +13,11 @@
       th:href="@{css/bootstrap.min.css}"
     />
     <link rel="stylesheet" href="/css/login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="col-md-4 col-md-offset-4">
@@ -39,6 +44,17 @@
         </div>
         <div>
           <input type="submit" value="Sign In" class="btn btn-primary" />
+        </div>
+        <br />
+        <p>Or sign in with social media account:</p>
+        <!-- Add this for Facebook and Google log in -->
+        <div class="col">
+          <a href="/oauth2/authorization/facebook" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook </a
+          ><br />
+          <a href="/oauth2/authorization/google" class="google btn"
+            ><i class="fa fa-google fa-fw"> </i> Login with Google+
+          </a>
         </div>
       </form>
       <p>Don't have an account yet? <a th:href="@{/signup}">Sign Up</a></p>
