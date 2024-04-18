@@ -3,8 +3,8 @@
 	<link 
   type="text/css" 
   rel="stylesheet" 
-  href="css/bootstrap.min.css" 
-  th:href="@{css/bootstrap.min.css}" />
+  href="/css/bootstrap.min.css" 
+  th:href="@{/css/bootstrap.min.css}" />
   <link rel="stylesheet" href="/css/addrecipient.css" />
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -44,9 +44,9 @@
       </select>
       <div style="clear: both; display: block; height: 10px;"></div>
 
-        <input type="submit" class="btn btn-success" value="Save"></input>
+        <input type="submit" class="btn btn-success" value="Save"></input><br>
     </form>
-    <a th:href="@{/recipientlist}" class="btn btn-success">Home</a>
+    <a th:href="@{/recipientlist}" class="btn btn-primary">Back to Home</a>
 	</div>
   </body>
 </html>
