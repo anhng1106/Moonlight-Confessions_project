@@ -29,7 +29,7 @@ public class CustomUser implements OAuth2User {
 
     @Override
     public String getName() {
-        return this.name;
+        return oauth2User.getAttribute("name");
     }
 
     // Additional getters and setters for custom properties
@@ -42,7 +42,7 @@ public class CustomUser implements OAuth2User {
     }
 
     public String getEmail() {
-        return email;
+        return oauth2User.<String>getAttribute("email"); 
     }
 
     public void setEmail(String email) {

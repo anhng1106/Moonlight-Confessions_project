@@ -2,6 +2,8 @@ package backend.project4.moonlight_confession.domain;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties.Provider;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
+ 
 
     // Username with unique constraint
     @Column(name = "username", nullable = false, unique = true)
