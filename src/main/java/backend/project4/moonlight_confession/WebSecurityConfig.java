@@ -41,7 +41,13 @@ public class WebSecurityConfig {
 		.permitAll()
 	)
 	.oauth2Login(oauth2Login -> oauth2Login
-		.loginPage("/login")  // Use the same login page for OAuth2
+		.loginPage("/login/oauth2/code/google")  // Use the same login page for OAuth2
+		.defaultSuccessUrl("/recipientlist", true)
+		.userInfoEndpoint(userInfoEndpoint -> userInfoEndpoint
+			.userService(customOAuth2UserService)
+		))
+	.oauth2Login(oauth2Login -> oauth2Login
+		.loginPage("/login/oauth2/code/facebook")  // Use the same login page for OAuth2
 		.defaultSuccessUrl("/recipientlist", true)
 		.userInfoEndpoint(userInfoEndpoint -> userInfoEndpoint
 			.userService(customOAuth2UserService)

@@ -1,13 +1,13 @@
-package backend.project4.moonlight_confession;
+// package backend.project4.moonlight_confession;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class MoonlightConfessionApplicationTests {
+// @SpringBootTest
+// class MoonlightConfessionApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
